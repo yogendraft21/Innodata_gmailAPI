@@ -1,9 +1,9 @@
 const axios = require("axios");
-const { createConfig } = require("./utils");
+const { createConfig } = require("../utils/utils");
 const nodemailer = require("nodemailer");
-const CONSTANTS = require("./constant");
+const CONSTANTS = require("../constants/constant");
 const { google } = require("googleapis");
-const makeCall = require("./twilio");
+const makeCall = require("../twilio/twilio");
 
 require("dotenv").config();
 
@@ -21,7 +21,6 @@ const notificationInfo = {
   subject: "Work link",
   phoneNumber: "+916375422034",
 };
-
 
 async function getMails(req, res) {
   try {
@@ -45,7 +44,6 @@ async function getMails(req, res) {
       .send(error.response?.statusText || "Internal Server Error");
   }
 }
-
 
 async function processThreads(threads, email, token) {
   const formattedThreads = [];
