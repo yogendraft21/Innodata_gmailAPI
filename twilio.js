@@ -8,16 +8,15 @@ const client = twilio(accountSid, authToken);
 
 async function makeCall(phoneNumber) {
     try {
-        console.log("this is called");
+        console.log("this is called",phoneNumber);
     const call = await client.calls.create({
       twiml: "<Response><Say>Hello from your Twilio Account!</Say></Response>",
-      url: "http://demo.twilio.com/docs/voice.xml",
       to: phoneNumber,
-      from: process.env.TWILIO_PHONE,
+      from: process.env.TWILIO_PHONE || "+14143696745",
     });
     console.log("Call SID:", call.sid);
   } catch (error) {
-    console.error("Error making call:", error);
+    console.log("Error making call:", error);
   }
 }
 
