@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gmail and Twilio Call Project</title>
 </head>
 <body>
 
@@ -33,7 +32,7 @@ TWILIO_PHONE=your_twilio_phone_number
 </code></pre>
 <ol start="4">
   <li>Update the <code>YOUR_REDIRECT_URI</code> placeholder in <code>googleAuth.js</code> with your redirect URI for OAuth 2.0 authentication.</li>
-  <li>Run the application using <code>npm start</code>.</li>
+  <li>Run the application using <code>node index.js</code>.</li>
 </ol>
 
 <h2>Usage</h2>
