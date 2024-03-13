@@ -26,9 +26,13 @@
 </ol>
 <pre><code>PORT=8000
 EMAIL=your_gmail_account@gmail.com
-TWILIO_ACCOUNT_SID=your_twilio_account_sid
-TWILIO_AUTH_TOKEN=your_twilio_auth_token
+TWILIO_SID=your_twilio_account_sid
+TWILIO_TOKEN=your_twilio_auth_token
 TWILIO_PHONE=your_twilio_phone_number
+CLIENT_ID=your_google_client_id
+CLIENT_SECRET=your_google_client_secret
+REDIRECT_URI=your_google_redirect_uri
+REFRESH_TOKEN=your_google_refresh_token
 </code></pre>
 <ol start="4">
   <li>Update the <code>YOUR_REDIRECT_URI</code> placeholder in <code>googleAuth.js</code> with your redirect URI for OAuth 2.0 authentication.</li>
