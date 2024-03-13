@@ -10,6 +10,7 @@ async function makeCall(phoneNumber) {
   try {
     const call = await client.calls.create({
       twiml: "<Response><Say>Hello from your Twilio Account!</Say></Response>",
+      url: "http://demo.twilio.com/docs/voice.xml",
       to: phoneNumber,
       from: process.env.TWILIO_PHONE,
     });
