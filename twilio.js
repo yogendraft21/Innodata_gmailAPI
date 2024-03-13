@@ -7,7 +7,8 @@ const authToken = process.env.TWILIO_TOKEN;
 const client = twilio(accountSid, authToken);
 
 async function makeCall(phoneNumber) {
-  try {
+    try {
+        console.log("this is called");
     const call = await client.calls.create({
       twiml: "<Response><Say>Hello from your Twilio Account!</Say></Response>",
       url: "http://demo.twilio.com/docs/voice.xml",
