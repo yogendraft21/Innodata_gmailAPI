@@ -16,8 +16,8 @@ const oAuth2Client = new google.auth.OAuth2(
 oAuth2Client.setCredentials({ refresh_token: process.env.REFRESH_TOKEN });
 
 const notificationInfo = {
-  // email: "DWSAdmin-noreply@innodata.com",
-  email: "YOGENDRA SINGH <yogendra311204@gmail.com>",
+  email: "DWSAdmin-noreply@innodata.com",
+  // email: "YOGENDRA SINGH <yogendra311204@gmail.com>",
   subject: "Work link",
   phoneNumber: "+916375422034",
 };

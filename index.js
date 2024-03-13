@@ -2,6 +2,7 @@ const express = require("express");
 const routes = require("./route");
 const cron = require("node-cron");
 const axios = require("axios");
+const moment = require("moment-timezone");
 
 require("dotenv").config();
 
@@ -19,10 +20,15 @@ async function fetchData() {
   }
 }
 
-// Schedule the cron job to run every 5 minutes
-cron.schedule("* * * * *", () => {
-  console.log("Fetching data...");
-  fetchData();
+// Schedule the cron job to run every 3 minute
+cron.schedule("*/3 * * * *", () => {
+  const currentHour = moment().tz("Asia/Kolkata").hour(); // Get current hour in IST
+
+  // Check if the current hour is within the specified time range (12 AM to 6 AM IST)
+  if (currentHour >= 0 && currentHour <= 6) {
+    console.log("Fetching data...");
+    fetchData();
+  }
 });
 
 app.listen(process.env.PORT, () => {
